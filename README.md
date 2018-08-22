@@ -46,7 +46,7 @@ You're going to need:
 
 1. Clone this repo to your hard drive with `git clone https://github.com/adamthedeveloper/slate.git`
 2. `cd slate`
-3. Initialize and start Slate. You can either do this locally, or with Vagrant:
+3. Initialize and start Slate:
 
 ```shell
 # either run this to run locally
