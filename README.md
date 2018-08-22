@@ -44,7 +44,6 @@ You're going to need:
 
 ### Getting Set Up
 
-Brilliant Developer? Don't follow 1 and 2. Clone this repo and work in the normal way.
 1. Clone this repo to your hard drive with `git clone https://github.com/adamthedeveloper/slate.git`
 2. `cd slate`
 3. Initialize and start Slate. You can either do this locally, or with Vagrant:
