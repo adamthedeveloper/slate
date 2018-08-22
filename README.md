@@ -76,7 +76,7 @@ Now, within your slate project folder, build your slate documentation changes:
 ```shell
 cd ~/slate
 SLATE_ENV=production bundle exec middleman build --clean
-cp -rf * ~/Vertx/starfish/src/main/resources/webroot/
+cp -rf build/* ~/Vertx/starfish/src/main/resources/webroot/
 ```
 
 Finally, build the Brilliant API (starfish):
