@@ -64,6 +64,43 @@ Now that Slate is all set up on your machine, you'll probably want to learn more
 
 If you'd prefer to use Docker, instructions are available [in the wiki](https://github.com/lord/slate/wiki/Docker).
 
+### Brilliant Deployment
+
+After you are happy with your documentation changes, you'll need to build them, and then copy
+the build into the starfish api app. If you haven't cloned Brilliant API yet, do so:
+
+```shell
+cd ~
+mkdir Virtx
+cd Vertx
+git clone git@github.com:adamthedeveloper/brilliant_api.git
+```
+
+You should have a folder inside ~Vertx called 'starfish'.
+Now, within your slate project folder, build your slate documentation changes:
+
+```shell
+cd ~/slate
+SLATE_ENV=production bundle exec middleman build --clean
+cp -rf * ~/Vertx/starfish/src/main/resources/webroot/
+```
+
+Finally, build the Brilliant API (starfish):
+
+```shell
+cd ~Vertx/starfish
+./gradlew clean bundleInstall shadowJar
+```
+
+You can test that the documentation is correct by running your jar:
+
+```shell
+java -jar build/libs/starfish-<some version>-fat.jar
+```
+
+Open a browser and go to http://localhost:8080 and review your changes. If all looks good, deploy
+the jar file to production. Info on how to do that is found in the Brilliant API readme.
+
 ### Note on JavaScript Runtime
 
 For those who don't have JavaScript runtime or are experiencing JavaScript runtime issues with ExecJS, it is recommended to add the [rubyracer gem](https://github.com/cowboyd/therubyracer) to your gemfile and run `bundle` again.
